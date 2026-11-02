@@ -1,6 +1,6 @@
 # 投研 Wiki 与万得 API：给 Codex 的设置指南
 
-版本：0.1.0 初稿｜整理日期：2026-11-03
+版本：0.1.1｜整理日期：2026-11-03
 
 为使用 Windows 和 Codex 的投研人员建立自己的研究知识库。先了解研究需求，再确认架构和整理规则，最后设置并用一份材料试运行。万得 API 可以独立接入，不是使用 Wiki 的前提。
 
@@ -10,7 +10,7 @@
 
 > 请阅读 https://github.com/richard63985-stack/investment-research-wiki-guide 的 README.md 和 START-HERE.md，帮助我设置投研 Wiki。先向我说明它的用途，再通过分轮提问了解我的研究工作，给出有推荐意见的架构与整理规则，得到我确认后再初始化。先用一份材料校准，不要直接批量处理。若我要求接入万得，按仓库的万得教程检查接口类型和环境，再验证连接与取数。
 
-如果 Codex 无法读取链接，下载仓库 ZIP 并解压，让 Codex 打开解压目录，发送“请阅读 START-HERE.md，开始引导我设置投研 Wiki”。这里是说明书目录，客户知识库另选一个本机目录。客户不需要会 Git，也不需要安装 grilling 技能。
+也可让 AI 读取 [纯文本入口](https://raw.githubusercontent.com/richard63985-stack/investment-research-wiki-guide/main/START-HERE.md)。如果 Codex 无法读取链接，下载 [仓库 ZIP](https://github.com/richard63985-stack/investment-research-wiki-guide/archive/refs/heads/main.zip) 并解压，让 Codex 打开解压目录，发送“请阅读 START-HERE.md，开始引导我设置投研 Wiki”。这里是说明书目录，客户知识库另选一个本机目录。客户不需要会 Git，也不需要安装 grilling 技能。
 
 ## 会得到什么
 
@@ -31,6 +31,7 @@ Markdown 是普通文本文件；Codex 维护这些文件，Obsidian 可作为�
 | 默认架构 | [目录与页面职责](wiki/ARCHITECTURE.md) |
 | 整理标准与权限 | [整理规则](wiki/PROCESSING.md) |
 | 初始化、日常使用和验收 | [实施指南](wiki/SETUP-AND-ACCEPTANCE.md) |
+| 日常整理与中断恢复 | [操作流程](wiki/OPERATIONS.md) |
 | 页面模板 | [模板目录说明](templates/README.md) |
 | 虚构材料试整理示例 | [样例](examples/CALIBRATION.md) |
 | 万得接入 | [Windows 接入教程](wind/SETUP.md) |
