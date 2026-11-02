@@ -1,0 +1,49 @@
+{
+  "changed": [
+    "40-行业/液冷行业.md",
+    "90-日志/Vertiv-2025Q1处理记录.md",
+    "研究证据/材料卡片/Vertiv-2025Q1.md",
+    "规则中心/交接记录.md"
+  ],
+  "added": [],
+  "deleted": [],
+  "other_files_unchanged": 39,
+  "links_checked": 128,
+  "broken_links": [],
+  "original_pdf_unchanged": true,
+  "industry_handnotes_unchanged": true,
+  "reading_scope_unchanged": true,
+  "source_verification_owner": "主控/root；子任务仅按主控结果补录",
+  "read_only_query": {
+    "file_count": 43,
+    "all_fingerprints_unchanged": true,
+    "added": [],
+    "changed": [],
+    "deleted": []
+  },
+  "root_rechecked_fingerprints": true,
+  "official_linked_pdf_matches_archived": true,
+  "pdf_sha256": "c102d66b9286648ced383d940e99422bef6c94ceea000ac0c66f8fa1ce595825",
+  "pdf_total_pages": 23,
+  "read_pages": [
+    1,
+    2,
+    3,
+    4,
+    7,
+    17,
+    18,
+    19,
+    20
+  ],
+  "child_visual_checked_pages": [
+    7,
+    17
+  ],
+  "root_visual_checked_pages": [
+    7,
+    17,
+    18,
+    20
+  ]
+}
