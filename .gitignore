@@ -1,0 +1,10 @@
+# 通用指南仓库不保存客户运行数据
+customer-data/
+local/
+.env
+.env.*
+!.env.example
+*.log
+__pycache__/
+.DS_Store
+Thumbs.db
