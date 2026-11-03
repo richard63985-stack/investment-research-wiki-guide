@@ -1,6 +1,6 @@
 # 投研 Wiki 与万得 API：给 Codex 的设置指南
 
-版本：0.1.7｜整理日期：2026-11-03
+版本：0.1.8｜整理日期：2026-11-03
 
 为使用 Windows 和 Codex 的投研人员建立自己的研究知识库。先了解研究需求，再确认架构和整理规则，最后设置并用一份材料试运行。万得 API 可以独立接入，不是使用 Wiki 的前提。
 
@@ -18,6 +18,7 @@
 - 原始资料、材料卡片与综合知识之间可追溯的关联。
 - 明确的整理重点、速览/标准/深度三级规则和更新权限。
 - 可持续使用的本机 AI 操作入口、个人配置与交接记录。
+- 配套 `investment-research-wiki` Skill，按你的规则执行整理、查询、检查和中断恢复。
 - 可选：万得连接验证、最小取数样例及日常取数规范。
 
 Markdown 是普通文本文件；Codex 维护这些文件，Obsidian 可作为可选阅读工具。首版不要求安装额外 Wiki 插件、数据库或服务器。
@@ -32,7 +33,7 @@ Markdown 是普通文本文件；Codex 维护这些文件，Obsidian 可作为�
 | 整理标准与权限 | [整理规则](wiki/PROCESSING.md) |
 | 初始化、日常使用和验收 | [实施指南](wiki/SETUP-AND-ACCEPTANCE.md) |
 | 日常整理与中断恢复 | [操作流程](wiki/OPERATIONS.md) |
-| 可选 LLM Wiki Skill | [社区方案、兼容性与独立试用](wiki/OPTIONAL-SKILLS.md) |
+| 配套投研 Wiki Skill | [适配内容、安装与使用](wiki/OPTIONAL-SKILLS.md) |
 | 页面模板 | [模板目录说明](templates/README.md) |
 | 虚构材料试整理示例 | [样例](examples/CALIBRATION.md) |
 | 万得接入 | [Windows 接入教程](wind/SETUP.md) |

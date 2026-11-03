@@ -33,7 +33,7 @@ https://raw.githubusercontent.com/richard63985-stack/investment-research-wiki-gu
 
 按 [个人配置模板](templates/PROFILE.md) 展示研究范围、目录、各对象深度、重点字段、来源和更新边界；附一个页面结构样例。列明推荐默认项及理由，询问是否按此方案初始化。
 
-本轮确认请求应同时列出客户库准确位置、首版要创建的页面和操作范围。客户确认架构即授权创建列明的结构/空页面，不代表已经认可 AI 未来生成的研究判断。
+本轮确认请求应同时列出客户库准确位置、首版要创建的页面和操作范围，包括将[投研适配 Skill](wiki/OPTIONAL-SKILLS.md)安装到客户库 `.agents/skills/investment-research-wiki/`，供后续日常任务使用；不安装上游原版或全局 Skill。客户确认架构即授权创建列明的结构/空页面，不代表已经认可 AI 未来生成的研究判断。
 
 客户确认前可只读检查；不创建知识库或安装工具。客户要求修改时更新同一方案，不保留互相矛盾的版本。
 

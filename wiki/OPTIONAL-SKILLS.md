@@ -1,41 +1,53 @@
-# 可选的 LLM Wiki Skill
+# 配套 Skill：投研适配版
 
-Skill 是供 AI 按需读取的一组操作说明。使用本投研指南不需要额外安装 Skill；初始化、查询和整理流程已经包含在本仓库及生成的客户库规则中。
+本仓库提供可安装的 [investment-research-wiki](../skills/investment-research-wiki/SKILL.md)。它基于社区 karpathy-llm-wiki 的流程改写，适配本指南的客户库；客户无需另装上游原版。
 
-## 找到的社区方案
+Skill 是 Codex 可按任务调用的操作说明。它负责入库、查询、检查、审核执行和中断恢复；目录、研究重点、整理深度与权限由客户库的 AGENTS.md、个人配置和规则决定。首次访谈仍从 [START-HERE.md](../START-HERE.md) 开始。
 
-[Astro-Han/karpathy-llm-wiki](https://github.com/Astro-Han/karpathy-llm-wiki) 将 Karpathy 的 LLM Wiki 概念做成可安装的 Skill，提供资料入库、知识查询和质量检查，声明支持 Codex。它是社区实现，不是 Karpathy 或 OpenAI 官方产品。
+## 已做的适配
 
-- [已核对版本](https://github.com/Astro-Han/karpathy-llm-wiki/tree/eafcc77001e496cc43499e4923b663aec722c813)：`eafcc77001e496cc43499e4923b663aec722c813`，核对日期 2026-11-03。
-- [Skill 原文](https://github.com/Astro-Han/karpathy-llm-wiki/blob/eafcc77001e496cc43499e4923b663aec722c813/SKILL.md)。
-- [安装说明](https://github.com/Astro-Han/karpathy-llm-wiki/blob/eafcc77001e496cc43499e4923b663aec722c813/README.md)。
-- [MIT 许可证](https://github.com/Astro-Han/karpathy-llm-wiki/blob/eafcc77001e496cc43499e4923b663aec722c813/LICENSE)，版权归 Yuhan Lei。本仓库提供入口与兼容性说明，未复制或改写上游 Skill。
+| 上游方案 | 本仓库适配版 |
+|---|---|
+| 固定 raw/wiki 结构 | 读取客户实际路径映射，支持中文目录与自定义分类 |
+| 首次入库创建目录 | 先访谈并确认方案，再初始化；日常 Skill 不跳过设置 |
+| 直接编写与联动知识页 | 普通事实依权限更新，判断变化、冲突及新页转正走客户审核规则 |
+| 同名原件增加文件名后缀 | 按来源与指纹去重；部分完成沿用原 ID、卡片与原件继续读取 |
+| 固定文章模板和来源字段 | 使用客户本机模板，保留投研口径、页码、阅读范围和重点深度 |
+| 检查时自动修复部分问题 | 检查默认只读，修复遵循明确授权；保护人工内容 |
 
-## 对投研客户的建议
+保留了上游的证据定位、增量分流和相关页检查思路。没有移植依赖 raw/wiki 与 Raw 字段的检查脚本；当前由 Codex 按客户结构执行检查，不声称存在自动事实校验器。
 
-**已经按本指南建立投研库：继续使用客户库的 AGENTS.md 和个人配置，不直接启用这份上游 Skill。** 两套规则的关键差异如下：
+## 安装到客户库
 
-| 项目 | 上游 Skill 默认行为 | 本投研指南 |
-|---|---|---|
-| 目录 | 固定 `raw/`、`wiki/`，知识页只允许一层主题子目录 | 访谈后确定目录，允许客户映射与调整 |
-| 知识页权限 | AI 直接编写和联动更新页面 | 保护人工内容，判断变化、冲突和新页面转正进入审核 |
-| 来源去重 | 同名原始文件添加数字后缀 | 先查材料登记、来源与处理进度，支持分次读取同一材料 |
-| 检查 | 可自动修索引、链接；脚本按上游目录和字段检查 | 遵守客户的写入权限与实际目录，引用保留材料定位和阅读范围 |
+首次设置时，AI 把此 Skill 列入初始化方案，客户确认后按[实施指南](SETUP-AND-ACCEPTANCE.md)安装。只安装到客户库，不安装到全局目录，也不把说明书仓库当作客户库。
 
-不能只在安装时加一句“以客户规则为准”就认为适配完成；上游的模板和检查脚本也依赖它自己的结构。不要把现有投研库重命名成 `raw/wiki` 来迁就 Skill，也不要把“部分阅读”变成重复入库。
+从本指南同一版本完整复制 `skills/investment-research-wiki/` 到客户库：
 
-如果将来要在投研库中正式使用，先单独适配 Skill、模板和脚本，再用客户库副本验证目录、权限、引用、续读和去重；通过后才替换日常入口。当前没有完成这项适配。
+```text
+客户知识库/
+├── AGENTS.md
+└── .agents/
+    └── skills/
+        └── investment-research-wiki/
+            ├── SKILL.md
+            ├── NOTICE.md
+            └── LICENSE
+```
 
-## 想单独体验上游 Skill
+保留三个文件及原目录关系。`.agents` 是以点开头的真实文件夹名，不能误建成 `agents`。复制后回读文件，核对客户根 AGENTS.md 的 Skill 链接及 Skill 所需的本机规则入口。客户目录改名不需要改 Skill 内部路径，因为它从客户根入口查找规则。
 
-适合尚未建立知识库、愿意采用上游通用结构的人。请另选一个空白体验目录，与投研库分开。
+对已有客户库：先读取现有 AGENTS.md、个人配置和交接，展示新增文件与入口改动；取得该范围授权后安装，保留原规则和自定义。同名 Skill 已存在时先比较，确认升级差异后更新，不覆盖其他技能。若已安装上游 karpathy-llm-wiki，说明两者冲突并由客户确认停用方式，不自动删除。
 
-可以把下面的话发给 Codex：
+## 使用与验收
 
-> 请在我指定的独立空白体验目录中，安装并试用 Astro-Han/karpathy-llm-wiki，使用提交 eafcc77001e496cc43499e4923b663aec722c813。先读取该版本 README.md、SKILL.md 和 LICENSE，核对目标目录；只安装到体验目录的 .agents/skills/karpathy-llm-wiki/，保留 SKILL.md、references/、scripts/ 及 LICENSE 的目录关系。不要安装到全局目录。如果目标已有同名 Skill 或不是空白体验目录，先报告现状，不覆盖。安装后列出实际文件，提示我在 Codex 中打开体验目录并开始新对话；用一份无敏感信息的样例验证资料入库、带出处查询和检查。不要改动我的正式投研库。
+让客户在 Codex 中打开客户知识库目录并开始新对话。可发送：
 
-安装时，Codex 应从锁定版本获取文件并检查完整性；只复制一个 SKILL.md 会缺少它引用的模板和检查脚本。运行脚本前先检查其内容及依赖；Windows 上使用实际可用的 Python 命令，不能直接假设存在 `python3`。不能联网或缺少运行环境时，明确报告未完成步骤。
+> 请使用 $investment-research-wiki，先读取本库规则和交接，说明当前待办，再按我的配置整理这份材料。判断变化给我审核。
 
-新对话可先发送：“请使用 karpathy-llm-wiki，说明当前知识库位置和操作规则，先不要入库。”确认识别的是体验目录后，再提供样例。
+也可直接说“只根据库内资料回答……”或“检查知识库的一致性，先不要修改”。若当前 Codex 未自动发现 Skill，先检查工作目录与安装文件，再让它直接读取本机 `.agents/skills/investment-research-wiki/SKILL.md`；不需要为了继续任务改全局配置。
 
-本仓库只核对了上游说明、规则和许可证，未在客户 Windows 上安装或运行该 Skill。上游的检查结果不等于投研事实已核实，也不替代人工判断与来源复核。
+分别记录“文件已安装”“新对话发现或显式读取”“样例流程通过”。不能仅凭复制成功就声称 Skill 已被发现或实际整理通过。验收包含自定义路径查找、带出处查询、重复/部分材料恢复和冲突审核；真实材料与 Windows 环境按客户实际结果记录。
+
+## 来源与许可
+
+上游为 [Astro-Han/karpathy-llm-wiki](https://github.com/Astro-Han/karpathy-llm-wiki/tree/eafcc77001e496cc43499e4923b663aec722c813)，锁定提交 `eafcc77001e496cc43499e4923b663aec722c813`。本适配版已改名，具体改动见 [NOTICE](../skills/investment-research-wiki/NOTICE.md)，保留 [MIT 许可](../skills/investment-research-wiki/LICENSE)。它不是 Karpathy 或 OpenAI 官方产品。
