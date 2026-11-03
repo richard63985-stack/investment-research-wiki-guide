@@ -5,6 +5,7 @@
 | 来源 | 用途 | 边界 |
 |---|---|---|
 | [Karpathy LLM Wiki idea file](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) | 原始材料与持续维护 Wiki 的概念来源 | 本仓库的投研目录与规则为定制设计，不是其官方实现 |
+| [Astro-Han/karpathy-llm-wiki](https://github.com/Astro-Han/karpathy-llm-wiki/tree/eafcc77001e496cc43499e4923b663aec722c813) | 可选社区 Skill 及安装方式 | 非官方实现；目录与审核规则尚未适配本投研库，见[兼容性说明](wiki/OPTIONAL-SKILLS.md) |
 | [Wind Client API 官网](https://www.wind.com.cn/portal/zh/ClientApi/index.html) | 支持平台/语言、CG 代码生成器 | 产品介绍，不是完整 Python 安装手册 |
 | [Wind 下载中心](https://www.wind.com.cn/download.htm) | 当前官方安装包和手册入口 | 执行时重新查看，不能固定旧下载地址 |
 | [Windows 安装配置手册](https://www.wind.com.cn/windftp/wind.net/WFT_Windows_Configuration_Manual.pdf) | 终端安装、目录选择、登录和网络配置 | PDF 封面为 2024.12；下载页标注日期与封面不同，采用文档自身标注。旧最低版本不代表今日推荐；不复制旧网络清单 |
