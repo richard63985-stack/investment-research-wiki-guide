@@ -1,12 +1,12 @@
 # 投研 Wiki 与万得 API：给 Codex 的设置指南
 
-版本：0.1.5｜整理日期：2026-11-03
+版本：0.1.6｜整理日期：2026-11-03
 
 为使用 Windows 和 Codex 的投研人员建立自己的研究知识库。先了解研究需求，再确认架构和整理规则，最后设置并用一份材料试运行。万得 API 可以独立接入，不是使用 Wiki 的前提。
 
 ## 把这个仓库交给 Codex
 
-复制下面的话，发送给客户的 Codex：
+复制下面的话，发送给你的 Codex：
 
 > 请阅读 https://github.com/richard63985-stack/investment-research-wiki-guide 的 README.md 和 START-HERE.md，帮助我设置投研 Wiki。先向我说明它的用途，再通过分轮提问了解我的研究工作，给出有推荐意见的架构与整理规则，得到我确认后再初始化。先用一份材料校准，不要直接批量处理。若我要求接入万得，按仓库的万得教程检查接口类型和环境，再验证连接与取数。
 
@@ -36,7 +36,7 @@ Markdown 是普通文本文件；Codex 维护这些文件，Obsidian 可作为�
 | 虚构材料试整理示例 | [样例](examples/CALIBRATION.md) |
 | 万得接入 | [Windows 接入教程](wind/SETUP.md) |
 | 万得日常使用 | [取数与落库规则](wind/USAGE.md) |
-| 来源、维护与验证范围 | [来源](SOURCES.md) · [维护说明](MAINTAINERS.md) · [检查记录](VALIDATION.md) |
+| 参考来源与适用范围 | [来源说明](SOURCES.md) · [适用范围与部署验收](VALIDATION.md) |
 
 本仓库只分发通用规则和虚构示例。客户的材料、账号、个人配置和取数结果留在独立本机知识库中。使用云端 AI 处理资料仍需符合客户自己的资料使用权限；本地保存不等于离线模型处理。
 
